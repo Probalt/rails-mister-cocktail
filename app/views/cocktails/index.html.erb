@@ -1,5 +1,6 @@
 <h1>Cocktails Index</h1>
-<% @cocktails.each do |c| %>
+<% list = @cocktails.sort_by {|w| w.name} %>
+<% list.each do |c| %>
 <ul>
 <li> <%= link_to c.name, cocktail_path(c.id) %> </li>
 </ul>
