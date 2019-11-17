@@ -1,8 +1,26 @@
-<h1>Cocktails Index</h1>
-<% list = @cocktails.sort_by {|w| w.name} %>
-<% list.each do |c| %>
-<ul>
-<li> <%= link_to c.name, cocktail_path(c.id) %> </li>
-</ul>
-<% end %>
-<%= link_to "Create a cocktail", new_cocktail_path %>
+<div class="container">
+  <nav class="d-flex m-4 align-items-center">
+    <h1 class="flex-grow-1">Your cocktail list</h1>
+    <%= link_to "+", new_cocktail_path, class: "btn rounded-pill" %>
+  </nav>
+
+  <% ordered_cocktails = @cocktails.sort_by { |w| w.name.upcase } %>
+
+  <% ordered_cocktails.each do |c| %>
+    <%= link_to cocktail_path(c.id) do %>
+      <div class="card-product mb-4">
+        <img src="https://picsum.photos/200/300"/>
+        <div class="card-product-infos flex-column">
+          <h2><%= c.name %></h2>
+          <p>ipsum bla patata</p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<footer>
+    <div><p> Made by Balthazar Le Bret </p></div>
+    <div><p><strong> Test website </strong></p></div>
+    <div><%= link_to "back to top", root_path %></div>
+</footer>

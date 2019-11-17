@@ -1,7 +1,17 @@
-<h1>Coucou Cocktail <strong>"<%= @cocktail.name %>"</strong></h1>
-<% @cocktail.doses.each do |d| %>
-<span> <h2> ingredient: <%= d.ingredient.name %> (<%= d.description %>) <%= link_to "🗑️", dose_path(d), method: :delete %> </h2> </span>
-<% end %>
-<p> <%= link_to "add a dose", new_cocktail_dose_path(@cocktail.id) %> </p>
-<p> <%= link_to "back to list", root_path %> </p>
+<div class="container">
 
+  <h1 class="m-3"><%= @cocktail.name %></h1>
+
+  <ul>
+    <% @cocktail.doses.each do |d| %>
+      <li> - <%= d.ingredient.name %> (<%= d.description %>) <%= link_to "🗑️", dose_path(d), method: :delete %></li>
+    <% end %>
+  </ul>
+
+  <div class="two-buttons">
+    <%= link_to "add a dose", new_cocktail_dose_path(@cocktail.id), class: "btn mt-2 ml-3" %>
+    <br>
+    <%= link_to "back to list", root_path, class: "btn mt-2 ml-3" %>
+  </div>
+
+</div>

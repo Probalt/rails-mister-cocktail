@@ -1,8 +1,14 @@
-<h1>You can create a cocktail here</h1>
-
 <div class="container">
-  <%= simple_form_for @cocktail do |p| %>
-    <%= p.input :name %>
-    <%= p.submit "submit", class: "btn btn-success" %>
-  <% end %>
+
+  <h1>Create a cocktail</h1>
+
+  <div class="new-cocktail-form">
+    <%= simple_form_for @cocktail do |p| %>
+      <%= p.input :name %>
+      <%= p.submit "done", class: "btn" %>
+    <% end %>
+  </div>
+
+  <%= link_to "back to list", root_path, class: "btn mt-2" %>
+
 </div>

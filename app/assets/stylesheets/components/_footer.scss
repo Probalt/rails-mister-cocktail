@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  height: 70px;
+  background-color: rgb(100, 100, 100);
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+footer {
+  a {
+    color: white;
+    padding: 5px;
+  }
+  a:hover {
+    border-bottom: solid white;
+    color: white;
+  }
+  p {
+    margin: 0px;
+    opacity: 0.5;
+  }
+}
